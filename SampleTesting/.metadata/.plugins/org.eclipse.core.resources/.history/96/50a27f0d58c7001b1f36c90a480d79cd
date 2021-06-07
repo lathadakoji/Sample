@@ -1,0 +1,24 @@
+package com.automation_framework.utility;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class CommonBusinessRequirements extends CommonUtilities{
+	
+	public CommonBusinessRequirements(WebDriver driver) {
+		super(driver);
+	}
+	
+	public void logInToVdezi(String userName, String password){
+		
+		driver.findElement(By.id("email")).clear();
+		driver.findElement(By.id("email")).sendKeys(userName);
+		
+		driver.findElement(By.id("password")).clear();
+		driver.findElement(By.id("password")).sendKeys(password);
+		
+		driver.findElement(By.id("login")).click();
+		
+	}
+
+}
